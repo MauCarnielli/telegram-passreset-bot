@@ -1,5 +1,7 @@
 <?php 
 
+	echo "Alo?";
+
 	define('TOKEN','637138978:AAGPr-IXTHJ6T41qcChyogonTyXcbblEpgw');
 	define('API','https://api.telegram.org/bot'.TOKEN.'/');
 	
@@ -47,8 +49,6 @@
 	}else{
 		echo "NAO DEU";
 	}
-	
-	echo "Alo?";
 	
 	
 ?>
