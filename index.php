@@ -13,7 +13,7 @@
 		}
 		
 		if($text == "Oi"){
-			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>"Deu certo, Maurício.");
+			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>'Deu certo, Maurício.');
 		}
 		
 	}
