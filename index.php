@@ -32,4 +32,16 @@
 		file_get_contents(API.$method, false, $context);
 	}
 
+	$update_response = file_get_contents(API."getupdates");
+	
+	$response = json_decode($update_response, true);
+	
+	$lenght = count($response["result"]);
+	
+	$update = $response["result"][$lenght-1];
+	
+	if(isset($update["message"])){
+		processMessage($update["message"]);
+	}
+	
 ?>
