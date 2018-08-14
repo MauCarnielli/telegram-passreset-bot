@@ -32,13 +32,9 @@
 		file_get_contents(API.$method, false, $context);
 	}
 
-	$update_response = file_get_contents(API."getupdates");
+	$update_response = file_get_contents("php://input");
 	
-	$response = json_decode($update_response, true);
-	
-	$lenght = count($response["result"]);
-	
-	$update = $response["result"][$lenght-1];
+	$update = json_decode($update_response, true);
 	
 	if(isset($update["message"])){
 		processMessage($update["message"]);
