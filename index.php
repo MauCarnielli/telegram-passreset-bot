@@ -8,6 +8,8 @@
 		if(isset($mensagem['text'])){
 			$text = $mensagem['text'];
 		}
+		
+		mandaMensagem("sendMessage", array('chat_id'=>$chat_id, 'text'=>$text));
 	
 	}	
 	
