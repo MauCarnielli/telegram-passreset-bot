@@ -23,6 +23,12 @@
 		file_get_contents($api.$metodo, false, $contexto);
 	}
 	
+	$resposta_update = file_get_contents("php://input");
+	$resposta = json_decode($resposta_update, true);
+	if(isset($resposta["message"])){
+		processaMensagem($resposta["message"]);
+	}
+	
 	echo "TESTE";
 	
 ?>
