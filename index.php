@@ -11,7 +11,16 @@
 	}
 	
 	function mandaMensagem($metodo, $parametros){
-		
+		$options = array(
+			'http' => array(
+				'method' => 'POST',
+				'content' => json_encode($parametros),
+				'headers' => "Content-Type: application/json\r\n" .
+							 "Accept: application/json\r\n"
+			)
+		);
+		$contexto = stream_context_create($options);
+		file_get_contents($api.$metodo, false, $contexto);
 	}
 	
 	echo "TESTE";
