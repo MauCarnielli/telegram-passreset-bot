@@ -11,12 +11,7 @@
 		}else{
 			echo "Não tem mensagem";
 		}
-		
-		if(strpos($text, "/start") === 0){
-			
-			mandaMensagem("sendMessage", array('chat_id'=>$chat_id, "text"=>'OPA MLK');
-		}
-	}
+	}	
 	
 	function mandaMensagem($metodo, $parametros){
 		$options = array(
