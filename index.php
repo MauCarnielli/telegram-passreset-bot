@@ -10,10 +10,16 @@
 		//Checa se a mensagem não está vazia
 		if(isset($message['text'])){
 			$text = $message['text']; //Atribui a mensagem a váriavel $text
+			echo "Tem mensagem";
+		}else {echo "Não tem mensagem";}
+		
+		if(strpos($text, "/start") === 0){
+			
+			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>'OPA MLK');
 		}
 		
-		if($text == "Oi"){
-			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>'Deu certo, Maurício.');
+		else if($text == "Oi"){
+			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>"Deu certo, Maurício.");
 		}
 		
 	}
