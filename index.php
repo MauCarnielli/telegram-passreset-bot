@@ -22,7 +22,7 @@
 		$options = array(
 			'http' => array(
 				'method' => 'POST',
-				'content' => $parameters,
+				'content' => json_encode($parameters),
 				'header' => "Content-Type: application/json\r\n" .
 							"Accept: application/json\r\n"
 			)
