@@ -10,8 +10,7 @@
 		//Checa se a mensagem não está vazia
 		if(isset($message['text'])){
 			$text = $message['text']; //Atribui a mensagem a váriavel $text
-			echo "Tem mensagem";
-		}else {echo "Não tem mensagem";}
+		}
 		
 		if(strpos($text, "/start") === 0){
 			
@@ -44,6 +43,11 @@
 	
 	if(isset($update["message"])){
 		processMessage($update["message"]);
+		echo "DEU";
+	}else{
+		echo "NAO DEU";
 	}
+	
+	
 	
 ?>
