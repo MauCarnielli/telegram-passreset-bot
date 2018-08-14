@@ -14,7 +14,7 @@
 		
 		if(strpos($text, "/start") === 0){
 			
-			sendMessage("sendMessage", array('chat_id'=>$chat_id, "text"=>'OPA MLK');
+			mandaMensagem("sendMessage", array('chat_id'=>$chat_id, "text"=>'OPA MLK');
 		}
 	}
 	
