@@ -7,6 +7,9 @@
 		$chat_id = $mensagem['chat']['id'];
 		if(isset($mensagem['text'])){
 			$text = $mensagem['text'];
+			echo "Tem mensagem heim";
+		}else{
+			echo "Não tem mensagem";
 		}
 	}
 	
