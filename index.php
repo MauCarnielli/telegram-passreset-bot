@@ -1,39 +1,12 @@
 <?php
+	$token = "637138978:AAGPr-IXTHJ6T41qcChyogonTyXcbblEpgw";
+	$api = "https://api.telegram.org/bot".$token."/";
 	
-	$api = "https://api.telegram.org/bot637138978:AAGPr-IXTHJ6T41qcChyogonTyXcbblEpgw/";
+	$update = file_get_contents('php://input');
+	$update_array = json_decode($update, TRUE);
+	$tamanho = count($update_array["result"]);
+	$chatid = $update_array["result"][$tamanho-1]["message"]["chat"]["id"];
+	$texto = $update_array["result"][$tamanho-1]["message"]["text"];
 	
-	function processaMensagem($mensagem){
-		$message_id = $mensagem['message_id'];
-		$chat_id = $mensagem['chat']['id'];
-		if(isset($mensagem['text'])){
-			$text = $mensagem['text'];
-		}
-		
-		file_get_contents($api."sendMessage?chat_id=".$chat_id."&text=".$text);
-	
-	}	
-	
-	function mandaMensagem($metodo, $parametros){
-		$options = array(
-			'http' => array(
-				'method' => 'POST',
-				'content' => json_encode($parametros),
-				'headers' => "Content-Type: application/json\r\n" .
-							 "Accept: application/json\r\n"
-			)
-		);
-		$contexto = stream_context_create($options);
-		file_get_contents($api.$metodo, false, $contexto);
-	}
-	
-	$resposta_update = file_get_contents("php://input");
-	$resposta = json_decode($resposta_update, true);
-	if(isset($resposta["message"])){
-		processaMensagem($resposta["message"]);
-	}else{
-		echo "Sem mensagem";
-	}
-	
-	echo "TESTE";
-	
+	file_get_contents($api."sendmessage/chat_id=".$chatid."&text=".$text);
 ?>
