@@ -9,7 +9,7 @@
 			$text = $mensagem['text'];
 		}
 		
-		mandaMensagem("sendMessage", array('chat_id'=>$chat_id, 'text'=>$text));
+		file_get_contents($api."sendMessage?chat_id=".$chat_id."&text=".$text);
 	
 	}	
 	
