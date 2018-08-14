@@ -7,15 +7,8 @@
 		$chat_id = $mensagem['chat']['id'];
 		if(isset($mensagem['text'])){
 			$text = $mensagem['text'];
-			echo "Tem mensagem heim";
-		}else{
-			echo "Não tem mensagem";
 		}
-		
-		if($text == "Oi"){
-			mandaMensagem("sendMessage", array('chat_id'=>$chat_id, "text"=>"Deu certo, Maurício.");
-		}
-		
+	
 	}	
 	
 	function mandaMensagem($metodo, $parametros){
@@ -35,6 +28,8 @@
 	$resposta = json_decode($resposta_update, true);
 	if(isset($resposta["message"])){
 		processaMensagem($resposta["message"]);
+	}else{
+		echo "Sem mensagem";
 	}
 	
 	echo "TESTE";
