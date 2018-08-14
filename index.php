@@ -11,6 +11,11 @@
 		}else{
 			echo "Não tem mensagem";
 		}
+		
+		if($text == "Oi"){
+			mandaMensagem("sendMessage", array('chat_id'=>$chat_id, "text"=>"Deu certo, Maurício.");
+		}
+		
 	}	
 	
 	function mandaMensagem($metodo, $parametros){
